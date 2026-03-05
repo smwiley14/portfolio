@@ -15,7 +15,7 @@ const Hero = () => {
         <Box sx={heroStyles.linksContainer}>
           <Button
             variant="outlined"
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/sam-wiley2003/"
             target="_blank"
             rel="noopener noreferrer"
             sx={heroStyles.link}
@@ -36,7 +36,7 @@ const Hero = () => {
           </Button>
           <Button
             variant="outlined"
-            href="/resume.pdf"
+            href="https://github.com/smwiley14"
             target="_blank"
             rel="noopener noreferrer"
             sx={heroStyles.link}
