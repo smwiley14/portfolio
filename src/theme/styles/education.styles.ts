@@ -15,9 +15,9 @@ export const educationStyles = {
     alignItems: 'flex-start',
   },
   heading: {
-    fontFamily: '"Brush Script MT", "Brush Script Std", "cursive"',
+    fontFamily: '"Caveat", cursive',
     fontSize: { xs: '2rem', md: '3rem' },
-    fontWeight: 400,
+    fontWeight: 600,
     minWidth: { md: '200px' },
     textAlign: { xs: 'left', md: 'left' },
   },
