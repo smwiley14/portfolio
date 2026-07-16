@@ -1,5 +1,3 @@
-import { SxProps, Theme } from '@mui/material/styles';
-
 export const heroStyles = {
   container: {
     minHeight: 'auto',

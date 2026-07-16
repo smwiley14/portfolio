@@ -1,5 +1,3 @@
-import { SxProps, Theme } from '@mui/material/styles';
-
 export const aboutStyles = {
   section: {
     py: { xs: 4, md: 6 },

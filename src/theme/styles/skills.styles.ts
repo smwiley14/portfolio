@@ -1,5 +1,3 @@
-import { SxProps, Theme } from '@mui/material/styles';
-
 export const skillsStyles = {
   section: {
     py: { xs: 8, md: 12 },
