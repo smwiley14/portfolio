@@ -11,6 +11,7 @@ interface Project {
     url: string;
     type: 'code' | 'site';
   }[];
+  tech: string[];
 }
 
 const projects: Project[] = [
@@ -24,9 +25,10 @@ const projects: Project[] = [
         within a vector store in my Postgres database.
         From a given natural language, query, I generate and display the relevant tables with a small summary.
         `,
+    tech: ['Python', 'React.js', 'Langchain', 'Langgraph', 'PostgreSQL', 'Docker Compose', 'Agentic Frameworks'],
     urls: [
       { title: 'Code', url: 'https://github.com/smwiley14/Baseball-stats-query-tool', type: 'code' },
-      { title: 'Live Site', url: '/baseball', type: 'site' },
+      { title: 'Live Site', url: 'batgpt.samwiley-stuff.com', type: 'site' },
     ],
   },
   {
@@ -37,11 +39,23 @@ const projects: Project[] = [
       I used airflow to to run this pipeline in backfill and fill my database, 
       and ran analytical SQL queries to get insights on the data. 
       I eventually used Streamlit to create a dashboard to visualize the data and Trends`,
+    tech: ['Python', 'Airflow', 'Streamlit', 'Data Pipelines', 'PostgreSQL'],
     urls: [
-      { title: 'Code', url: 'https://github.com/smwiley14/Billboard-charts-analysis', type: 'code' },
+      { title: 'Code', url: 'https://github.com/smwiley14/Syonym-game', type: 'code' },
       { title: 'Dashboard', url: '/billboard-dashboard', type: 'site' },
     ],
   },
+  {
+    title: 'Synonymism',
+    description:
+      'Vocabulary based Daily Trivia Game',
+    tech: ['Python', 'Neo4j', 'Graph Dabtabases', 'React.js', 'Docker Compose', 'Airflow', 'Streamlit'],
+    urls: [
+      { title: 'Code', url: 'https://github.com/smwiley14/Billboard-charts-analysis', type: 'code' },
+      { title: 'Dashboard', url: 'synonynis,.samwiley-stuff.com', type: 'site' },
+    ],
+
+  }
 ];
 
 const ProjectSection = () => {
