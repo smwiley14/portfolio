@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/billboard",
+      "destination": "https://billboard.samwiley-stuff.com",
+      "permanent": false
+    }
+  ]
+}

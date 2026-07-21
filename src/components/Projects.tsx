@@ -42,7 +42,7 @@ const projects: Project[] = [
     tech: ['Python', 'Airflow', 'Streamlit', 'Data Pipelines', 'PostgreSQL'],
     urls: [
       { title: 'Code', url: 'https://github.com/smwiley14/Syonym-game', type: 'code' },
-      { title: 'Dashboard', url: '/billboard-dashboard', type: 'site' },
+      { title: 'Dashboard', url: 'https://billboard.samwiley-stuff.com', type: 'site' },
     ],
   },
   {
