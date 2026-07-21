@@ -28,7 +28,7 @@ const projects: Project[] = [
     tech: ['Python', 'React.js', 'Langchain', 'Langgraph', 'PostgreSQL', 'Docker Compose', 'Agentic Frameworks'],
     urls: [
       { title: 'Code', url: 'https://github.com/smwiley14/Baseball-stats-query-tool', type: 'code' },
-      { title: 'Live Site', url: 'batgpt.samwiley-stuff.com', type: 'site' },
+      { title: 'Live Site', url: 'https://batgpt.samwiley-stuff.com', type: 'site' },
     ],
   },
   {
@@ -52,7 +52,7 @@ const projects: Project[] = [
     tech: ['Python', 'Neo4j', 'Graph Dabtabases', 'React.js', 'Docker Compose', 'Airflow', 'Streamlit'],
     urls: [
       { title: 'Code', url: 'https://github.com/smwiley14/Billboard-charts-analysis', type: 'code' },
-      { title: 'Dashboard', url: 'synonynis,.samwiley-stuff.com', type: 'site' },
+      { title: 'Dashboard', url: 'https://synonymism.samwiley-stuff.com', type: 'site' },
     ],
 
   }
