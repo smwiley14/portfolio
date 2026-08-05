@@ -1,22 +1,31 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Link } from '@mui/material';
 import { educationStyles } from '../theme/styles';
+import { useReveal } from '../hooks/useReveal';
 
 const Education = () => {
+  const ref = useReveal();
   return (
-    <Box id="education" sx={educationStyles.section}>
-      <Box sx={educationStyles.container}>
-        <Typography variant="h2" component="h2" sx={educationStyles.heading}>
-          Education
-        </Typography>
-        <Box sx={educationStyles.content}>
-          <Typography component="p" variant="body1" sx={{ mb: 1 }}>
-            <a href="https://princeton.edu" className="school-link" style={{ color: '#ff6b35', textDecoration: 'none' }}>
+    <Box id="education" ref={ref} className="reveal" sx={educationStyles.section}>
+      <Typography variant="h2" component="h2" sx={educationStyles.heading}>
+        Education
+      </Typography>
+      <Box sx={educationStyles.item}>
+        <Box sx={educationStyles.date}>May 2025</Box>
+        <Box sx={educationStyles.body}>
+          <Typography component="h3" sx={educationStyles.school}>
+            <Link
+              href="https://www.lehigh.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={educationStyles.schoolLink}
+            >
               Lehigh University
-            </a>, May 2025
+            </Link>
           </Typography>
-          <Typography component="p" variant="body1">
-            B.S. Computer Science <br />
+          <Typography component="p" sx={educationStyles.degree}>
+            B.S. Computer Science
+            <br />
             Minor in Data Science
           </Typography>
         </Box>

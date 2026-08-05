@@ -50,19 +50,22 @@ const NavBar = () => {
             sx={navbarStyles.logo}
             onClick={() => scrollToSection('hero')}
           >
-            Portfolio
+            Sam Wiley
           </Typography>
           <Box sx={navbarStyles.navButtons}>
-            <Button color="inherit" onClick={() => scrollToSection('about')}>
+            <Button sx={navbarStyles.navButton} onClick={() => scrollToSection('about')}>
               About
             </Button>
-            <Button color="inherit" onClick={() => scrollToSection('skills')}>
-              Skills
-            </Button>
-            <Button color="inherit" onClick={() => scrollToSection('projects')}>
+            <Button sx={navbarStyles.navButton} onClick={() => scrollToSection('projects')}>
               Projects
             </Button>
-            <Button color="inherit" onClick={() => scrollToSection('contact')}>
+            <Button sx={navbarStyles.navButton} onClick={() => scrollToSection('experience')}>
+              Experience
+            </Button>
+            <Button sx={navbarStyles.navButton} onClick={() => scrollToSection('education')}>
+              Education
+            </Button>
+            <Button sx={navbarStyles.navButton} onClick={() => scrollToSection('contact')}>
               Contact
             </Button>
           </Box>

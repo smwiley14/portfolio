@@ -1,4 +1,4 @@
-export const educationStyles = {
+export const experienceStyles = {
   section: {
     py: { xs: 5, md: 6 },
     px: { xs: 3, md: 3 },
@@ -6,7 +6,6 @@ export const educationStyles = {
     mx: 'auto',
     backgroundColor: 'background.default',
   },
-  container: {},
   heading: {
     fontWeight: 700,
     mb: 3,
@@ -15,6 +14,8 @@ export const educationStyles = {
     display: 'flex',
     flexDirection: { xs: 'column', sm: 'row' },
     gap: { xs: 0.5, sm: 3 },
+    mb: 3.5,
+    '&:last-child': { mb: 0 },
   },
   date: {
     flexShrink: 0,
@@ -26,20 +27,19 @@ export const educationStyles = {
   body: {
     flex: 1,
   },
-  school: {
+  company: {
     fontWeight: 700,
     fontSize: '1.05rem',
     mb: 0.5,
   },
-  schoolLink: {
-    color: 'text.primary',
-    textDecoration: 'underline',
-    textUnderlineOffset: '3px',
-    '&:hover': { color: 'text.secondary' },
+  role: {
+    color: 'text.secondary',
+    fontSize: '0.9rem',
+    mb: 0.75,
   },
-  degree: {
+  description: {
     color: 'text.primary',
     fontSize: '0.9rem',
-    lineHeight: 1.6,
+    lineHeight: 1.65,
   },
 };

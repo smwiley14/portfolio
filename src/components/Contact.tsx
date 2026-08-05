@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 import {
   Box,
-  Container,
   Typography,
   TextField,
   Button,
   Paper,
   Stack,
 } from '@mui/material';
+import { Email, LinkedIn, GitHub, Send } from '@mui/icons-material';
 import { contactStyles } from '../theme/styles';
-// Note: Install @mui/icons-material package: npm install @mui/icons-material
-// For now, using text icons as fallback
-const Email = () => <span>📧</span>;
-const LinkedIn = () => <span>💼</span>;
-const GitHub = () => <span>📦</span>;
-const Send = () => <span>✉️</span>;
+import { useReveal } from '../hooks/useReveal';
+
+const CONTACT_EMAIL = 'smwiley14@gmail.com';
 
 const Contact = () => {
+  const ref = useReveal();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -32,34 +32,39 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    const subject = encodeURIComponent(`Portfolio message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `${formData.message}\n\nFrom: ${formData.name} (${formData.email})`
+    );
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
   };
 
   const socialLinks = [
-    { icon: <Email />, label: 'Email', url: 'mailto:your.email@example.com' },
-    { icon: <LinkedIn />, label: 'LinkedIn', url: 'https://linkedin.com' },
-    { icon: <GitHub />, label: 'GitHub', url: 'https://github.com' },
+    { icon: <Email />, label: 'Email', url: `mailto:${CONTACT_EMAIL}` },
+    {
+      icon: <LinkedIn />,
+      label: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/sam-wiley2003/',
+    },
+    { icon: <GitHub />, label: 'GitHub', url: 'https://github.com/smwiley14' },
   ];
 
   return (
-    <Box id="contact" sx={contactStyles.section}>
-      <Container maxWidth="md">
-        <Typography variant="h2" component="h2" align="center" sx={contactStyles.title}>
+    <Box id="contact" ref={ref} className="reveal" sx={contactStyles.section}>
+      <Box sx={contactStyles.inner}>
+        <Typography variant="h2" component="h2" sx={contactStyles.title}>
           Get In Touch
         </Typography>
-        <Typography variant="body1" align="center" sx={contactStyles.description}>
-          I'm always open to discussing new projects, creative ideas, or opportunities
-          to be part of your visions.
+        <Typography variant="body1" sx={contactStyles.description}>
+          I'm always open to discussing new projects, opportunities, or just
+          talking shop. Feel free to reach out.
         </Typography>
         <Box sx={contactStyles.grid}>
-          <Paper elevation={3} sx={contactStyles.paper}>
+          <Paper sx={contactStyles.paper}>
             <Typography variant="h5" component="h3" sx={contactStyles.paperTitle}>
-              Contact Information
+              Contact
             </Typography>
-            <Stack spacing={3}>
+            <Stack spacing={2}>
               {socialLinks.map((link, index) => (
                 <Button
                   key={index}
@@ -76,12 +81,12 @@ const Contact = () => {
               ))}
             </Stack>
           </Paper>
-          <Paper elevation={3} sx={contactStyles.paper}>
+          <Paper sx={contactStyles.paper}>
             <Typography variant="h5" component="h3" sx={contactStyles.paperTitle}>
               Send a Message
             </Typography>
             <form onSubmit={handleSubmit}>
-              <Stack spacing={3}>
+              <Stack spacing={2.5}>
                 <TextField
                   required
                   fullWidth
@@ -90,6 +95,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   variant="outlined"
+                  size="small"
                 />
                 <TextField
                   required
@@ -100,6 +106,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   variant="outlined"
+                  size="small"
                 />
                 <TextField
                   required
@@ -111,6 +118,7 @@ const Contact = () => {
                   multiline
                   rows={4}
                   variant="outlined"
+                  size="small"
                 />
                 <Button
                   type="submit"
@@ -126,7 +134,7 @@ const Contact = () => {
             </form>
           </Paper>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };

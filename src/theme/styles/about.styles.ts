@@ -1,35 +1,20 @@
 export const aboutStyles = {
   section: {
-    py: { xs: 4, md: 6 },
-    backgroundColor: 'background.default',
-    maxWidth: '1200px',
+    py: { xs: 5, md: 6 },
+    px: { xs: 3, md: 3 },
+    maxWidth: '1000px',
     mx: 'auto',
-    px: { xs: 3, md: 6 },
+    backgroundColor: 'background.default',
   },
-  container: {
-    display: 'flex',
-    flexDirection: { xs: 'column', md: 'row' },
-    gap: { xs: 2, md: 6 },
-    alignItems: 'flex-start',
-  },
+  container: {},
   heading: {
-    fontFamily: '"Caveat", cursive',
-    fontSize: { xs: '2rem', md: '3rem' },
-    fontWeight: 600,
-    minWidth: { md: '200px' },
-    textAlign: { xs: 'left', md: 'left' },
+    fontWeight: 700,
+    mb: 2,
   },
   content: {
-    fontFamily: '"Courier New", "Monaco", "monospace"',
-    fontSize: '1rem',
-    lineHeight: 1.8,
-    flex: 1,
-    '& a': {
-      color: '#ff6b35', // orange accent
-      textDecoration: 'none',
-      '&:hover': {
-        textDecoration: 'underline',
-      },
-    },
+    color: 'text.primary',
+    fontSize: '0.95rem',
+    lineHeight: 1.75,
+    maxWidth: '760px',
   },
 };

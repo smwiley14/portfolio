@@ -1,13 +1,81 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: #f2ede4;
+  font-family: 'Sometype Mono', 'Courier New', ui-monospace, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Offset anchored sections so the fixed navbar doesn't cover their headings */
+div[id='hero'],
+div[id='about'],
+div[id='education'],
+div[id='skills'],
+div[id='projects'],
+div[id='experience'],
+div[id='contact'] {
+  scroll-margin-top: 88px;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Sometype Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Marker-highlighter effect: a colored band painted behind the text baseline */
+.marker {
+  background-repeat: no-repeat;
+  background-size: 100% 55%;
+  background-position: 0 88%;
+  padding: 0 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.marker-yellow {
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#ffe27a, #ffe27a);
+  background-image: linear-gradient(#ffe27a, #ffe27a);
+}
+.marker-blue {
+  background-image: linear-gradient(#a9d3f5, #a9d3f5);
+}
+.marker-pink {
+  background-image: linear-gradient(#f6c0d5, #f6c0d5);
+}
+.marker-green {
+  background-image: linear-gradient(#bfe3b4, #bfe3b4);
+}
+
+/* Scroll-reveal animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-visible {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    animation: none;
+  }
 }

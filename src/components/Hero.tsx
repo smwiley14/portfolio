@@ -1,51 +1,110 @@
 import React from 'react';
-import { Box, Container, Typography, Button } from '@mui/material';
+import { Box, Typography, Avatar, Link } from '@mui/material';
+import { LocationOn, Email, LinkedIn, GitHub, Language } from '@mui/icons-material';
+import {
+  SiPython,
+  SiTypescript,
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiPostgresql,
+  SiApacheairflow,
+  SiLangchain,
+  SiDocker,
+} from 'react-icons/si';
+import { IconType } from 'react-icons';
 import { heroStyles } from '../theme/styles';
-import {LinkedIn, GitHub, Description} from '@mui/icons-material';
+
+interface Skill {
+  label: string;
+  icon: IconType;
+  color: string;
+}
+
+const skills: Skill[] = [
+  { label: 'Python', icon: SiPython, color: '#3776AB' },
+  { label: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+  { label: 'JavaScript', icon: SiJavascript, color: '#E6B800' },
+  { label: 'React.js', icon: SiReact, color: '#149ECA' },
+  { label: 'Node.js', icon: SiNodedotjs, color: '#5FA04E' },
+  { label: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
+  { label: 'Airflow', icon: SiApacheairflow, color: '#017CEE' },
+  { label: 'LangChain', icon: SiLangchain, color: '#1C3C3C' },
+  { label: 'Docker', icon: SiDocker, color: '#2496ED' },
+];
+
 const Hero = () => {
   return (
     <Box id="hero" sx={heroStyles.container}>
-      <Container maxWidth="md">
-        <Typography component="h1" sx={heroStyles.name}>
-          Sam Wiley
-        </Typography>
-        {/* <Typography component="p" sx={heroStyles.tagline}>
-          Based out of NYC.
-        </Typography> */}
-        <Box sx={heroStyles.linksContainer}>
-          <Button
-            variant="outlined"
-            href="https://www.linkedin.com/in/sam-wiley2003/"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={heroStyles.link}
-          >
-            <LinkedIn />
-            Linked in
-          </Button>
-          <Button
-            variant="outlined"
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={heroStyles.link}
-          >
-            
-            <Description />
-            Resume
-          </Button>
-          <Button
-            variant="outlined"
-            href="https://github.com/smwiley14"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={heroStyles.link}
-          >
-            <GitHub />
-            GitHub
-          </Button>
+      <Box sx={heroStyles.grid}>
+        {/* Title + skills */}
+        <Box sx={heroStyles.left}>
+          <Typography component="h1" sx={heroStyles.role}>
+            Full Stack &amp; Data Engineer
+          </Typography>
+          <Box component="ul" sx={heroStyles.skillsList}>
+            {skills.map(({ label, icon, color }) => {
+              const Icon = icon as unknown as React.FC<{
+                color?: string;
+                size?: string | number;
+              }>;
+              return (
+                <Box component="li" key={label} sx={heroStyles.skillItem}>
+                  <Icon color={color} />
+                  {label}
+                </Box>
+              );
+            })}
+          </Box>
         </Box>
-      </Container>
+
+        {/* Contact info */}
+        <Box sx={heroStyles.contact}>
+          <Box sx={heroStyles.contactItem}>
+            <LocationOn />
+            New York City, NY
+          </Box>
+          <Box sx={heroStyles.contactItem}>
+            <Email />
+            <Link href="mailto:smwiley14@gmail.com" sx={heroStyles.contactLink}>
+              smwiley14@gmail.com
+            </Link>
+          </Box>
+          <Box sx={heroStyles.contactItem}>
+            <LinkedIn />
+            <Link
+              href="https://www.linkedin.com/in/sam-wiley2003/"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={heroStyles.contactLink}
+            >
+              sam-wiley2003
+            </Link>
+          </Box>
+          <Box sx={heroStyles.contactItem}>
+            <GitHub />
+            <Link
+              href="https://github.com/smwiley14"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={heroStyles.contactLink}
+            >
+              smwiley14
+            </Link>
+          </Box>
+          <Box sx={heroStyles.contactItem}>
+            <Language />
+            Fluent English
+          </Box>
+        </Box>
+
+        {/* Photo */}
+        <Box sx={heroStyles.photoWrap}>
+          <Avatar src="/profile.jpg" alt="Sam Wiley" sx={heroStyles.photo}>
+            SW
+          </Avatar>
+        </Box>
+      </Box>
     </Box>
   );
 };
