@@ -11,7 +11,14 @@ import {
   SiApacheairflow,
   SiLangchain,
   SiDocker,
+  SiTerraform,
+  // SiGithub,
+  // SiGitlab,
+  SiKubernetes,
+  SiGitlab,
+  SiLinux  // SiGcp,
 } from 'react-icons/si';
+import { FaAws, FaGithub } from 'react-icons/fa';
 import { IconType } from 'react-icons';
 import { heroStyles } from '../theme/styles';
 
@@ -31,6 +38,11 @@ const skills: Skill[] = [
   { label: 'Airflow', icon: SiApacheairflow, color: '#017CEE' },
   { label: 'LangChain', icon: SiLangchain, color: '#1C3C3C' },
   { label: 'Docker', icon: SiDocker, color: '#2496ED' },
+  { label: 'Terraform', icon: SiTerraform, color: '#623CE4' },
+  { label: 'AWS', icon: FaAws, color: '#FF9900' },
+  { label: 'Kubernetes', icon: SiKubernetes, color: '#326CE5' },
+  { label: 'Github (Actions)', icon: FaGithub, color: '#181717' },
+  { label: 'Linux', icon: SiLinux, color: '#FCC624' },
 ];
 
 const Hero = () => {
@@ -40,7 +52,7 @@ const Hero = () => {
         {/* Title + skills */}
         <Box sx={heroStyles.left}>
           <Typography component="h1" sx={heroStyles.role}>
-            Full Stack &amp; Data Engineer
+            Full Stack Engineer
           </Typography>
           <Box component="ul" sx={heroStyles.skillsList}>
             {skills.map(({ label, icon, color }) => {
@@ -91,10 +103,6 @@ const Hero = () => {
             >
               smwiley14
             </Link>
-          </Box>
-          <Box sx={heroStyles.contactItem}>
-            <Language />
-            Fluent English
           </Box>
         </Box>
 

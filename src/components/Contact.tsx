@@ -56,8 +56,7 @@ const Contact = () => {
           Get In Touch
         </Typography>
         <Typography variant="body1" sx={contactStyles.description}>
-          I'm always open to discussing new projects, opportunities, or just
-          talking shop. Feel free to reach out.
+          I'm always open to discussing new opportunities, and making new connections.
         </Typography>
         <Box sx={contactStyles.grid}>
           <Paper sx={contactStyles.paper}>

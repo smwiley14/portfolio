@@ -13,13 +13,10 @@ const About = () => {
       </Typography>
       <Box sx={aboutStyles.content}>
         <Typography component="p" variant="body1">
-          I'm a <Marker color="yellow">full stack software engineer</Marker> with
-          a passion for building <Marker color="blue">web applications</Marker>,{' '}
-          <Marker color="pink">data pipelines</Marker>, and automation services.
-          I'm from and currently living in New York City. Outside of work I love
-          sports (baseball, basketball, and football), skiing, golfing, cooking,
-          and dogs.
-        </Typography>
+        I'm a full-stack engineer who enjoys the full range of the stack: everything from provisioning cloud infrastructure to building the interface someone actually clicks on.
+        I love building out complex systems and data pipelines, and trying new technologies along the way.
+        New York City based. When I'm not building things, I'm probably watching baseball, out on a golf course, skiing or cooking.
+        Currently looking for work, so if you like what you see, feel free to reach out!        </Typography>
       </Box>
     </Box>
   );
