@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Avatar, Link } from '@mui/material';
-import { LocationOn, Email, LinkedIn, GitHub, Language } from '@mui/icons-material';
+import { LocationOn, Email, LinkedIn, GitHub } from '@mui/icons-material';
 import {
   SiPython,
   SiTypescript,
@@ -15,7 +15,6 @@ import {
   // SiGithub,
   // SiGitlab,
   SiKubernetes,
-  SiGitlab,
   SiLinux  // SiGcp,
 } from 'react-icons/si';
 import { FaAws, FaGithub } from 'react-icons/fa';
