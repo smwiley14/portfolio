@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { aboutStyles } from '../theme/styles';
 import { useReveal } from '../hooks/useReveal';
-import Marker from './Marker';
+// import Marker from './Marker';
 
 const About = () => {
   const ref = useReveal();
